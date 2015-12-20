@@ -76,30 +76,35 @@
 
 	/* OR cherry pick methods from lodash */
 
+	console.log("imported object... ");
+
+	// import an exported object
+
+	/* We would either do the entire library */
+
 	console.log(_objectExport2.default);
 
 	// import
 
 	// Use imported jQuery
-
-	// import an exported object
-
-	/* We would either do the entire library */
 	(0, _jquery2.default)('p').on('click', function () {
 	  alert('ya clicked it');
 	});
 
 	// use the imported helper object
+	console.log("imported helper object...");
 	console.log(h.formatPrice(5000));
 
 	// use imported superagent module
 	_superagent2.default.get('https://api.github.com/users/wesbos').end(function (err, res) {
+	  console.log("response from github...");
 	  console.log(res.body);
 	});
 
 	// try out lodash
 	var dogs = [{ 'name': 'snickers', 'age': 2, breed: 'King Charles' }, { 'name': 'prudence', 'age': 5, breed: 'Poodle' }];
 
+	console.log("lodash...");
 	console.log(_lodash2.default.findWhere(dogs, { 'breed': 'King Charles' }));
 
 	// try out cherry picked lodash
@@ -137,7 +142,7 @@
 	}
 
 	function statement() {
-	  console.log("what");
+	  console.log("what is this?");
 	};
 
 /***/ },
@@ -21974,6 +21979,18 @@
 	}
 
 	/**
+	 * Check if `mime` is json or has +json structured syntax suffix.
+	 *
+	 * @param {String} mime
+	 * @return {Boolean}
+	 * @api private
+	 */
+
+	function isJSON(mime) {
+	  return /[\/+]json\b/.test(mime);
+	}
+
+	/**
 	 * Return the mime type for the given `str`.
 	 *
 	 * @param {String} str
@@ -22228,6 +22245,8 @@
 	      err = new Error('Parser is unable to parse the response');
 	      err.parse = true;
 	      err.original = e;
+	      // issue #675: return the raw response if the response parsing fails
+	      err.rawResponse = self.xhr && self.xhr.responseText ? self.xhr.responseText : null;
 	      return self.callback(err);
 	    }
 
@@ -22618,8 +22637,13 @@
 	 */
 
 	Request.prototype.crossDomainError = function(){
-	  var err = new Error('Origin is not allowed by Access-Control-Allow-Origin');
+	  var err = new Error('Request has been terminated\nPossible causes: the network is offline, Origin is not allowed by Access-Control-Allow-Origin, the page is being unloaded, etc.');
 	  err.crossDomain = true;
+
+	  err.status = this.status;
+	  err.method = this.method;
+	  err.url = this.url;
+
 	  this.callback(err);
 	};
 
@@ -22735,6 +22759,7 @@
 	    // serialize stuff
 	    var contentType = this.getHeader('Content-Type');
 	    var serialize = this._parser || request.serialize[contentType ? contentType.split(';')[0] : ''];
+	    if (!serialize && isJSON(contentType)) serialize = request.serialize['application/json'];
 	    if (serialize) data = serialize(data);
 	  }
 
@@ -22921,7 +22946,7 @@
 /* 6 */
 /***/ function(module, exports) {
 
-	
+
 	/**
 	 * Expose `Emitter`.
 	 */
@@ -23091,7 +23116,7 @@
 /* 7 */
 /***/ function(module, exports) {
 
-	
+
 	/**
 	 * Reduce `arr` with `fn`.
 	 *
@@ -23102,7 +23127,7 @@
 	 * TODO: combatible error handling?
 	 */
 
-	module.exports = function(arr, fn, initial){  
+	module.exports = function(arr, fn, initial){
 	  var idx = 0;
 	  var len = arr.length;
 	  var curr = arguments.length == 3
@@ -23112,7 +23137,7 @@
 	  while (idx < len) {
 	    curr = fn.call(null, curr, arr[idx], ++idx, arr);
 	  }
-	  
+
 	  return curr;
 	};
 
@@ -23120,8 +23145,9 @@
 /* 8 */
 /***/ function(module, exports) {
 
-	'use strict';
+	"use strict";
 
+	console.log("from non-module file...");
 	console.log("This runs on page load..");
 
 	var woof = document.querySelector('.dog');

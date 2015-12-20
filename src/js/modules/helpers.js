@@ -15,5 +15,5 @@ export function discountPrice(price, percentage) {
 }
 
 export function statement(){
-  console.log("what");
+  console.log("what is this?");
 };

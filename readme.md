@@ -11,3 +11,10 @@ Includes some very simple Browserify and Webpack ES6 Module examples in the `exa
 Then run:
 
 `npm run bundle` for browserify or `npm run webpack` for webpack. The brains behind these commands are in the `package.json` file and `webpack.config.js`.
+
+### watch files 
+https://webpack.github.io/docs/tutorials/getting-started/#watch-mode
+
+
+### server
+`npm install webpack-dev-server -g`

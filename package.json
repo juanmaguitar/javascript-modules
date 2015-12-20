@@ -1,0 +1,57 @@
+{
+  "name": "js-modules",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack --progress --colors --watch",
+    "watch-sass": "node-sass -w -r --output-style compressed src/scss/style.scss dist/css/style.css",
+    "watch-assets": "watch 'cp -r src/img dist/' src/img",
+    "watch-all": "npm run watch-sass & npm run watch-assets & npm run webpack-server",
+    "webpack-server": "webpack-dev-server --progress --colors",
+    "build": "npm run webpack",
+    "start": "npm run watch-all",
+    "preinstall": "npm install node-sass webpack-dev-server -g"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^2.1.4",
+    "lodash": "^3.10.1",
+    "superagent": "^1.5.0",
+    "bootstrap": "https://github.com/twbs/bootstrap/archive/v3.0.2.tar.gz"
+  },
+  "devDependencies": {
+    "babel-core": "^6.3.17",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babelify": "^7.2.0",
+    "flickity": "^1.1.1",
+    "node-sass": "^3.4.2",
+    "nodemon": "^1.3.7",
+    "open-browser-webpack-plugin": "0.0.1",
+    "rollup-plugin-babel": "^2.2.0",
+    "rollup-plugin-npm": "^1.1.0",
+    "sass-loader": "^3.1.2",
+    "uglify-js": "^2.4.16",
+    "watch": "^0.14.0",
+    "watchify": "^3.6.1",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0",
+    "jade-loader": "0.6.x",
+    "json-loader": "0.5.x",
+    "url-loader": "0.5.x",
+    "file-loader": "0.5.x",
+    "coffee-loader": "0.7.x",
+    "jshint-loader": "0.6.x",
+    "bundle-loader": "0.5.x",
+    "style-loader": "0.6.x",
+    "css-loader": "0.6.x",
+    "less-loader": "0.7.x",
+    "exports-loader": "0.6.x",
+    "raw-loader": "0.5.x"
+
+  }
+}

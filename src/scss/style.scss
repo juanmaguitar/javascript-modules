@@ -1,0 +1,8 @@
+@import "__config";
+
+.foo {
+  color: $primary;
+  font-size:3em;
+  margin:$spacing/2;
+  background-color: red;
+}

@@ -1,3 +1,4 @@
+console.log("from non-module file...");
 console.log("This runs on page load..");
 
 var woof = document.querySelector('.dog');

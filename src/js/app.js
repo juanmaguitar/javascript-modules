@@ -1,23 +1,24 @@
-import * as h from './helpers';
-import $ from 'jquery'; 
+import * as h from './modules/helpers';
+import $ from '../../node_modules/jquery';
 
 /* We would either do the entire library */
-import _ from 'lodash';
+import _ from '../../node_modules/lodash';
 
 /* OR cherry pick methods from lodash */
-import { throttle } from 'lodash';
+import { throttle } from '../../node_modules/lodash';
 
-import request from 'superagent';
+import request from '../../node_modules/superagent';
 
 // import some code that isn't a module
-import './not-a-module';
+import './non-modules/not-a-module';
 
 // import an exported object
-import coolDude from './object-export';
+import coolDude from './modules/object-export';
 
+console.log("imported object... ");
 console.log(coolDude);
 
-// import 
+// import
 
 // Use imported jQuery
 $('p').on('click',function() {
@@ -25,14 +26,16 @@ $('p').on('click',function() {
 });
 
 // use the imported helper object
+console.log("imported helper object...");
 console.log(h.formatPrice(5000));
 
 // use imported superagent module
 request
-.get('https://api.github.com/users/wesbos')
-.end(function(err, res){
-    console.log(res.body);
-});
+  .get('https://api.github.com/users/wesbos')
+  .end(function(err, res){
+      console.log("response from github...");
+      console.log(res.body);
+  });
 
 // try out lodash
 var dogs = [
@@ -40,6 +43,7 @@ var dogs = [
   { 'name': 'prudence', 'age': 5, breed : 'Poodle'}
 ];
 
+console.log("lodash...");
 console.log(_.findWhere(dogs, { 'breed': 'King Charles' }));
 
 // try out cherry picked lodash
