@@ -25,6 +25,25 @@ $('p').on('click',function() {
   alert('ya clicked it');
 });
 
+// Async Module Loading
+$('.async-load').on('click',function() {
+    // this.showLoader();
+    console.log ("@@@ start async loading....")
+    require.ensure([], function() {
+      require("./modules/logger").log();
+    });
+});
+
+// Async Non-Module Loading
+$('.async-load').on('click',function() {
+    // this.showLoader();
+    console.log ("@@@ start async loading....")
+    require.ensure([], function() {
+      require("./non-modules/message");
+    });
+});
+
+
 // use the imported helper object
 console.log("imported helper object...");
 console.log(h.formatPrice(5000));
