@@ -15,28 +15,29 @@ import './non-modules/not-a-module';
 // import an exported object
 import coolDude from './modules/object-export';
 
+console.log(">>>>> APP <<<<<<<");
+
 console.log("imported object... ");
 console.log(coolDude);
 
 // import
 
 // Use imported jQuery
-$('p').on('click',function() {
-  alert('ya clicked it');
+$('p').on('click', () => {
+  alert('ya clicked it... i said!');
 });
 
 // Async Module Loading
 $('.async-load').on('click',function() {
     // this.showLoader();
-    console.log ("start async loading....")
+    console.log ("#### start async loading....")
     require.ensure([], function() {
       require("./modules/logger").log();
     });
 });
 
 // Async Non-Module Loading
-$('.async-load').on('click',function() {
-    // this.showLoader();
+$('.async-load').on('click', () => {
     console.log ("start async loading....")
     require.ensure([], function() {
       require("./non-modules/message");
