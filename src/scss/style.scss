@@ -1,8 +1,8 @@
 @import "__config";
 
-.foo {
-  color: $primary;
-  font-size:3em;
+body {
+  color: white;
+  font-size:2em;
   margin:$spacing/2;
-  background-color: red;
+  background-color: black;
 }
