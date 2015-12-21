@@ -20,18 +20,18 @@ https://webpack.github.io/docs/tutorials/getting-started/#watch-mode
 `npm install webpack-dev-server -g`
 
 ### resources
-http://wesbos.com/javascript-modules/
-https://github.com/petehunt/webpack-howto
-https://github.com/dabit3/beginning-webpack
-https://github.com/webpack/webpack
+- http://wesbos.com/javascript-modules/
+- https://github.com/petehunt/webpack-howto
+- https://github.com/dabit3/beginning-webpack
+- https://github.com/webpack/webpack
 
-http://www.jonathan-petitcolas.com/2015/05/15/howto-setup-webpack-on-es6-react-application-with-sass.html
-https://docs.npmjs.com/misc/scripts
-https://github.com/webpack/example-app
-https://github.com/marcello3d/babel-preset-es2015-webpack2
+- http://www.jonathan-petitcolas.com/2015/05/15/howto-setup-webpack-on-es6-react-application-with-sass.html
+- https://docs.npmjs.com/misc/scripts
+- https://github.com/webpack/example-app
+- https://github.com/marcello3d/babel-preset-es2015-webpack2
 
 ### docs webpack
-http://webpack.github.io/docs/
-http://webpack.github.io/docs/using-loaders.html
-http://webpack.github.io/docs/webpack-dev-server.html#webpack-dev-server-cli
-https://webpack.github.io/docs/tutorials/getting-started/#watch-mode
+- http://webpack.github.io/docs/
+- http://webpack.github.io/docs/using-loaders.html
+- http://webpack.github.io/docs/webpack-dev-server.html#webpack-dev-server-cli
+- https://webpack.github.io/docs/tutorials/getting-started/#watch-mode

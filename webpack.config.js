@@ -6,12 +6,11 @@ var openBrowser = new openBrowserPlugin({ url: 'http://localhost:8080/webpack-de
 
 module.exports = {
     entry: {
-        // path: path.join(__dirname, "assets"),
         app : './src/js/app.js'
     },
     output: {
         path: 'dist/js/',
-      publicPath: './dist/js/',
+        publicPath: 'dist/js/',
         filename: '[name].js'
     },
     module: {

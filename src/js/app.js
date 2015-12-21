@@ -28,7 +28,7 @@ $('p').on('click',function() {
 // Async Module Loading
 $('.async-load').on('click',function() {
     // this.showLoader();
-    console.log ("@@@ start async loading....")
+    console.log ("start async loading....")
     require.ensure([], function() {
       require("./modules/logger").log();
     });
@@ -37,7 +37,7 @@ $('.async-load').on('click',function() {
 // Async Non-Module Loading
 $('.async-load').on('click',function() {
     // this.showLoader();
-    console.log ("@@@ start async loading....")
+    console.log ("start async loading....")
     require.ensure([], function() {
       require("./non-modules/message");
     });
